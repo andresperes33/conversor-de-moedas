@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -48,8 +46,8 @@ input, select {
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    
 }
+
 .digite {
     width: 93%;
 }
@@ -75,9 +73,14 @@ button:active {
 
 .result {
     margin-top: 20px;
-    padding: 10px;
+    padding: 5px;
     border: 3px solid #8B51FC;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
 }
 .result img {
     width: 30px;
@@ -90,4 +93,10 @@ button:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
+
+.bold {
+    font-weight: bold;
+}
+
