@@ -15,7 +15,12 @@ index.html - Arquivo principal do projeto.
 styles.css - Arquivo de estilos do projeto.
 script.js - Arquivo de scripts JavaScript.
 img/ - Pasta contendo as imagens das moedas e a seta.
+
 🖼️ Screenshot
+![Descrição da imagem](img/conversor-de-moedas-foto.png)
+
+
+
 
 🎨 Estilos CSS
 Os estilos são definidos no arquivo styles.css e incluem classes para estilizar o corpo do documento, o contêiner principal, os inputs, os botões, e o resultado da conversão.
