@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversor de Moedas</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <img src="./img/logo.gif" alt="Logo">
-        <div class="converter">
-            <div class="input-group">
-                <label for="fromCurrency">Converter <b>de</b></label>
-                <select id="fromCurrency">
-                    <option value="BRL">R$ Real brasileiro</option>
-                    <option value="USD">USD Dólar americano</option>
-                    <option value="EUR">€ Euro</option>
-                    <option value="GBP">£ Libra</option>
-                    <option value="BTC">₿ Bitcoin</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="toCurrency"><b>PARA</b></label>
-                <select id="toCurrency">
-                    <option value="USD">USD Dólar americano</option>
-                    <option value="BRL">R$ Real brasileiro</option>
-                    <option value="EUR">€ Euro</option>
-                    <option value="GBP">£ Libra</option>
-                    <option value="BTC">₿ Bitcoin</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="amount">Valor</label>
-                <input class="digite" type="number" id="amount" placeholder="Digite um valor..">
-            </div>
-            <button id="convertButton">Converter</button>
-            <div id="result" class="result">
-                <!-- Resultado da conversão aparecerá aqui -->
-            </div>
+      <img src="./img/logo.gif" alt="Logo" />
+      <button class="name">Conversor de Moedas</button>
+      <div class="converter">
+        <div class="input-group">
+            
+          <label for="fromCurrency">Converter <b>de</b></label>
+          <select id="fromCurrency">
+            <option value="USD">USD Dólar americano</option>
+            <option value="BRL">R$ Real brasileiro</option>
+
+            <option value="EUR">€ Euro</option>
+            <option value="GBP">£ Libra</option>
+            <option value="BTC">₿ Bitcoin</option>
+          </select>
         </div>
+        <div class="input-group">
+          <label for="toCurrency"><b>PARA</b></label>
+          <select id="toCurrency">
+            <option value="BRL">R$ Real brasileiro</option>
+            <option value="USD">USD Dólar americano</option>
+            <option value="EUR">€ Euro</option>
+            <option value="GBP">£ Libra</option>
+            <option value="BTC">₿ Bitcoin</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="amount">Valor</label>
+          <input
+            class="digite"
+            type="number"
+            id="amount"
+            placeholder="Digite um valor.."
+          />
+        </div>
+        <button id="convertButton">Converter</button>
+        <div id="result" class="result">
+          <!-- Resultado da conversão aparecerá aqui -->
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

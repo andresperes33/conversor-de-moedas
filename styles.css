@@ -15,6 +15,16 @@ body {
     align-items: center;
     padding: 20px;
 }
+.name{
+    background-color: #8B51FC;
+    width: 18%;
+    padding: 10px;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    
+}
 
 img {
     width: 150px;
@@ -28,11 +38,13 @@ img {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    border-top: none;
 }
 
 .input-group {
     margin-bottom: 15px;
     text-align: left;
+    
 }
 
 label {

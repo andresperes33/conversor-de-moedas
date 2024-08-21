@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fromCurrencySelect.addEventListener('change', updateResult);
     toCurrencySelect.addEventListener('change', updateResult);
 
-    document.getElementById('convertButton').addEventListener('click', function() {
+    document.getElementById('convertButton').addEventListener('click', async function() {
         const fromCurrency = fromCurrencySelect.value;
         const toCurrency = toCurrencySelect.value;
         const amount = parseFloat(document.getElementById('amount').value);
@@ -36,26 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const apiKey = '08dc97b1dcf3fb951eac4aa4';
-        const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency}`;
+        const apiUrl = `https://economia.awesomeapi.com.br/last/${fromCurrency}-${toCurrency}`;
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === 'success') {
-                    const exchangeRate = data.conversion_rates[toCurrency];
-                    const convertedAmount = amount * exchangeRate;
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            const conversionKey = `${fromCurrency}${toCurrency}`;
+            const exchangeRate = data[conversionKey].bid;
+            const convertedAmount = amount * exchangeRate;
 
-                    fromAmountSpan.textContent = amount.toFixed(2);
-                    toAmountSpan.textContent = convertedAmount.toFixed(2);
-                } else {
-                    resultDiv.innerHTML = '<p>Erro ao obter taxa de câmbio.</p>';
-                }
-            })
-            .catch(error => {
-                console.error('Erro ao buscar a taxa de câmbio:', error);
-                resultDiv.innerHTML = '<p>Erro ao buscar a taxa de câmbio.</p>';
-            });
+            fromAmountSpan.textContent = amount.toFixed(2);
+            toAmountSpan.textContent = convertedAmount.toFixed(2);
+        } catch (error) {
+            console.error('Erro ao buscar a taxa de câmbio:', error);
+            resultDiv.innerHTML = '<p>Erro ao buscar a taxa de câmbio.</p>';
+        }
     });
 
     // Initialize the result display
